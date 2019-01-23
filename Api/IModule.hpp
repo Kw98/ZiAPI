@@ -8,7 +8,7 @@
 #pragma once
 
 #include <type_traits>
-#include <unordored_map>
+#include <unordered_map>
 #include <string>
 
 namespace Ziapi
@@ -20,8 +20,8 @@ namespace Ziapi
 		POSTPROCESSING,
 		BOTH
 	};
-	
-	struct ModulesData
+
+	struct ModuleData
 	{
 		int prePriority;
 		int postPriority;
@@ -33,7 +33,7 @@ namespace Ziapi
 		int code;
 		std::string reason;
 		std::string version;
-		std::unordored_map<std::string, std::string> headers;
+		std::unordered_map<std::string, std::string> headers;
 		std::string msgBody;
 	};
 	
@@ -41,7 +41,7 @@ namespace Ziapi
 	{
 	public:
 		virtual ~IModule() = default;
-		virtual const ModuleData getModuleData() const noexept = 0;
-		virtual std::conditionnal<true, std::string, Response> run(const std::conditionnal<true, std::string, Response> &input) = 0;
+		virtual const ModuleData getModuleData() const noexcept = 0;
+		virtual std::conditional<true, std::string, Response> run(const std::conditional<true, std::string, Response> &input) = 0;
 	};
 };

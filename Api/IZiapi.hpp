@@ -7,6 +7,8 @@
 
 #pragma once
 
+#include "IModule.hpp"
+
 namespace Ziapi
 {
 
