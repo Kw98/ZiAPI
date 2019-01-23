@@ -37,10 +37,10 @@ namespace Ziapi
 		std::string msgBody;
 	};
 	
-	class IModules
+	class IModule
 	{
 	public:
-		virtual ~IModules() = default;
+		virtual ~IModule() = default;
 		virtual const ModuleData getModuleData() const noexept = 0;
 		virtual std::conditionnal<true, std::string, Response> run(const std::conditionnal<true, std::string, Response> &input) = 0;
 	};
